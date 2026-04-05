@@ -22,9 +22,11 @@ target_include_directories(${PROJECT_NAME}
     PUBLIC 
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
-    PRIVATE
-        ${OPENSSL_INCLUDE_DIR}
 )
+
+if (BUILD_SHARED_LIBS)
+    target_compile_definitions(${PROJECT_NAME} PUBLIC HEXA_UTILS_BUILD_SHARED=1)
+endif()
 
 install(TARGETS ${PROJECT_NAME}
         EXPORT ${PROJECT_NAME}Config

@@ -156,10 +156,10 @@ HEXA_UTILS_API_INTERNAL(void) ReaderWriterLock_LockWrite(ReaderWriterLock* cLock
     lock->LockWrite();
 }
 
-HEXA_UTILS_API_INTERNAL(int) ReaderWriterLock_TryLockWrite(ReaderWriterLock* cLock)
+HEXA_UTILS_API_INTERNAL(int) ReaderWriterLock_TryLockWrite(ReaderWriterLock* cLock, bool preserveWriterFairness)
 {
     ReaderWriterLockCpp* lock = reinterpret_cast<ReaderWriterLockCpp*>(cLock);
-    return lock->TryLockWrite();
+    return lock->TryLockWrite(preserveWriterFairness);
 }
 
 HEXA_UTILS_API_INTERNAL(void) ReaderWriterLock_UnlockWrite(ReaderWriterLock* cLock)
