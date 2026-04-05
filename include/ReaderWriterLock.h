@@ -1,5 +1,5 @@
-#ifndef HEXA_UTILS_H
-#define HEXA_UTILS_H
+#ifndef HEXA_UTILS_ReaderWriterLock_H
+#define HEXA_UTILS_ReaderWriterLock_H
 
 #include "common.h"
 #include <stdio.h>
